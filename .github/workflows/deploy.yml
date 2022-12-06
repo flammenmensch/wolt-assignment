@@ -46,6 +46,7 @@ jobs:
         run: npm run build --if-present
         env:
           PUBLIC_URL: /wolt-assignment
+          REACT_APP_API_ENDPOINT: /wolt-assignment/data/schedule.json
       - name: Compress build folder
         run: tar -zcvf build.tar.gz build
       - name: Upload build folder

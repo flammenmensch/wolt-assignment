@@ -3,13 +3,13 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { rest } from "msw";
 import { worker } from "../../mocks/browser";
 import { App } from ".";
+import { API_ENDPOINT } from "../../constants";
 
 export default {
   title: "application/App",
   component: App,
 } as ComponentMeta<typeof App>;
 
-const ENDPOINT = "/data/schedule.json";
 const JSON_RESPONSE = {
   monday: [],
   tuesday: [
@@ -72,7 +72,7 @@ Success.args = {};
 Success.decorators = [
   (Story) => {
     worker.use(
-      rest.get(ENDPOINT, (req, res, ctx) =>
+      rest.get(API_ENDPOINT, (req, res, ctx) =>
         res(ctx.delay(1500), ctx.status(200), ctx.json(JSON_RESPONSE))
       )
     );
@@ -85,7 +85,7 @@ Loading.args = {};
 Loading.decorators = [
   (Story) => {
     worker.use(
-      rest.get(ENDPOINT, (req, res, ctx) => res(ctx.delay("infinite")))
+      rest.get(API_ENDPOINT, (req, res, ctx) => res(ctx.delay("infinite")))
     );
     return <Story />;
   },
@@ -96,7 +96,7 @@ Error.args = {};
 Error.decorators = [
   (Story) => {
     worker.use(
-      rest.get(ENDPOINT, (req, res, ctx) =>
+      rest.get(API_ENDPOINT, (req, res, ctx) =>
         res(ctx.delay(1000), ctx.status(500))
       )
     );
