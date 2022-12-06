@@ -1,0 +1,11 @@
+.heading {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

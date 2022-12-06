@@ -1,0 +1,47 @@
+.app {
+  margin: 0 auto;
+  max-width: 360px;
+  padding: 2rem;
+}
+
+.icon {
+  font-size: .75em;
+  color: var(--color-grey-3);
+
+  &::after {
+    content: "\e8b5";
+    font-family: inherit;
+  }
+}
+
+.loading {
+  display: inline-flex;
+  color: var(--color-grey-3);
+  gap: .25rem;
+  align-items: center;
+
+  &::before {
+    content: "";
+    display: block;
+    width: .75rem;
+    height: .75rem;
+    border-radius: 1rem;
+    border: 2px solid var(--color-grey-2);
+    border-top: 2px solid var(--color-grey-3);
+    animation: rotation 1s linear infinite;
+  }
+}
+
+.error {
+  display: inline-block;
+  color: var(--color-red);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}

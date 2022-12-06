@@ -1,0 +1,30 @@
+@import "~reset.css/reset.css";
+
+:root {
+  --color-black: #202125;
+  --color-white: #ffffff;
+  --color-green: #5bcb02;
+  --color-grey-1: #f8f8f8;
+  --color-grey-2: #eeeeee;
+  --color-grey-3: #a1a2a4;
+  --color-red: #dd363c;
+  --font-family: Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+html, body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-grey-2);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,
+  'wght' var(--font-weight-bold),
+  'GRAD' 0,
+  'opsz' 48
+}

@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.labelContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.label {
+  margin: 0;
+  padding: 0;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.375;
+  text-transform: capitalize;
+}
+
+.today {
+  display: inline-block;
+  color: var(--color-green);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.75rem;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+.closed {
+  color: var(--color-grey-3);
+}
+
+.rangeList {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: flex-end;
+}
