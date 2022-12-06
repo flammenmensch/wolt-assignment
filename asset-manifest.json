@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/scales-cheatsheet/static/css/main.2f7e7250.css",
-    "main.js": "/scales-cheatsheet/static/js/main.f1294baf.js",
-    "static/js/787.1db1198b.chunk.js": "/scales-cheatsheet/static/js/787.1db1198b.chunk.js",
-    "index.html": "/scales-cheatsheet/index.html",
-    "main.2f7e7250.css.map": "/scales-cheatsheet/static/css/main.2f7e7250.css.map",
-    "main.f1294baf.js.map": "/scales-cheatsheet/static/js/main.f1294baf.js.map",
-    "787.1db1198b.chunk.js.map": "/scales-cheatsheet/static/js/787.1db1198b.chunk.js.map"
+    "main.css": "/wolt-assignment/static/css/main.2f7e7250.css",
+    "main.js": "/wolt-assignment/static/js/main.1e9bc40d.js",
+    "static/js/787.1db1198b.chunk.js": "/wolt-assignment/static/js/787.1db1198b.chunk.js",
+    "index.html": "/wolt-assignment/index.html",
+    "main.2f7e7250.css.map": "/wolt-assignment/static/css/main.2f7e7250.css.map",
+    "main.1e9bc40d.js.map": "/wolt-assignment/static/js/main.1e9bc40d.js.map",
+    "787.1db1198b.chunk.js.map": "/wolt-assignment/static/js/787.1db1198b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2f7e7250.css",
-    "static/js/main.f1294baf.js"
+    "static/js/main.1e9bc40d.js"
   ]
 }
