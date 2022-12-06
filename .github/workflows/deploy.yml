@@ -45,7 +45,7 @@ jobs:
       - name: Build application
         run: npm run build --if-present
         env:
-          PUBLIC_URL: /scales-cheatsheet
+          PUBLIC_URL: /wolt-assignment
       - name: Compress build folder
         run: tar -zcvf build.tar.gz build
       - name: Upload build folder
