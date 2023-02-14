@@ -1,9 +1,11 @@
 import styles from "./ClockIcon.module.scss";
 
-export default () => (
+const ClockIcon = () => (
   <span
     aria-hidden={true}
     role="presentation"
     className={`${styles.icon} material-symbols-outlined`}
   />
 );
+
+export default ClockIcon;
