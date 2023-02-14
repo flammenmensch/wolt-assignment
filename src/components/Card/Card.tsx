@@ -5,12 +5,12 @@ const Card = (props: PropsWithChildren) => {
   return <article className={styles.card}>{props.children}</article>;
 };
 
-export const CardHeader = (props: PropsWithChildren) => (
-  <header className={styles.cardHeader}>{props.children}</header>
+Card.Header = (props: PropsWithChildren) => (
+  <header className={styles.header}>{props.children}</header>
 );
 
-export const CardBody = (props: PropsWithChildren) => (
-  <section className={styles.cardBody}>{props.children}</section>
+Card.Body = (props: PropsWithChildren) => (
+  <section className={styles.body}>{props.children}</section>
 );
 
 export default Card;

@@ -4,7 +4,7 @@ const ScheduleList = (props: PropsWithChildren) => {
   return <ul className={styles.list}>{props.children}</ul>;
 };
 
-export const ScheduleListItem = (props: PropsWithChildren) => {
+ScheduleList.Item = (props: PropsWithChildren) => {
   return <li className={styles.item}>{props.children}</li>;
 };
 

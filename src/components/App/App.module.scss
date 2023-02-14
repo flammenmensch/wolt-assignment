@@ -1,16 +1,15 @@
+@use "../../mixins" as m;
+
 .app {
   margin: 0 auto;
   max-width: 360px;
   padding: 2rem;
-}
 
-.icon {
-  font-size: .75em;
-  color: var(--color-grey-3);
-
-  &::after {
-    content: "\e8b5";
-    font-family: inherit;
+  @include m.small-screen {
+    & {
+      margin: 0;
+      padding: 0.5rem;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ScheduleList, ScheduleListItem } from ".";
+import { ScheduleList } from ".";
 
 export default {
   title: "components/ScheduleList",
@@ -10,10 +10,10 @@ export default {
 
 const Template: ComponentStory<typeof ScheduleList> = (args) => (
   <ScheduleList {...args}>
-    <ScheduleListItem>Item 1</ScheduleListItem>
-    <ScheduleListItem>Item 2</ScheduleListItem>
-    <ScheduleListItem>Item 3</ScheduleListItem>
-    <ScheduleListItem>Item 4</ScheduleListItem>
+    <ScheduleList.Item>Item 1</ScheduleList.Item>
+    <ScheduleList.Item>Item 2</ScheduleList.Item>
+    <ScheduleList.Item>Item 3</ScheduleList.Item>
+    <ScheduleList.Item>Item 4</ScheduleList.Item>
   </ScheduleList>
 );
 

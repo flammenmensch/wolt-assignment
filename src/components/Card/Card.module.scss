@@ -7,11 +7,14 @@
   box-shadow: var(--box-shadow);
 }
 
-.cardHeader {
+.header {
   border-bottom: 1px solid var(--color-black);
   padding-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: .5em;
 }
 
-.cardBody {
+.body {
   padding-top: 0.5rem;
 }

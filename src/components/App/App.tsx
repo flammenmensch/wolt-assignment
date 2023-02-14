@@ -1,10 +1,11 @@
 import { useSchedule } from "../../application/useSchedule";
-import { Card, CardBody, CardHeader } from "../Card";
-import { ScheduleList, ScheduleListItem } from "../ScheduleList";
+import { Card } from "../Card";
+import { ScheduleList } from "../ScheduleList";
 import { DayRecord } from "../DayRecord";
 import { Heading } from "../Heading";
 
 import styles from "./App.module.scss";
+import { ClockIcon } from "../ClockIcon";
 
 const App = () => {
   const { isLoading, error, schedule } = useSchedule();
@@ -12,17 +13,11 @@ const App = () => {
   return (
     <div className={styles.app}>
       <Card>
-        <CardHeader>
-          <Heading>
-            <span
-              aria-hidden={true}
-              role="presentation"
-              className={`${styles.icon} material-symbols-outlined`}
-            />
-            Opening hours
-          </Heading>
-        </CardHeader>
-        <CardBody>
+        <Card.Header>
+          <ClockIcon />
+          <Heading>Opening hours</Heading>
+        </Card.Header>
+        <Card.Body>
           {isLoading && (
             <span className={styles.loading}>Loading schedule...</span>
           )}
@@ -34,17 +29,17 @@ const App = () => {
           {schedule && (
             <ScheduleList>
               {schedule.map((item) => (
-                <ScheduleListItem key={item.label}>
+                <ScheduleList.Item key={item.label}>
                   <DayRecord
                     label={item.label}
                     isToday={item.isToday}
                     ranges={item.hours}
                   />
-                </ScheduleListItem>
+                </ScheduleList.Item>
               ))}
             </ScheduleList>
           )}
-        </CardBody>
+        </Card.Body>
       </Card>
     </div>
   );

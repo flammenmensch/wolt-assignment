@@ -1,0 +1,9 @@
+.icon {
+  color: var(--color-grey-3);
+  font-size: inherit;
+
+  &::after {
+    content: "\e8b5";
+    font-family: inherit;
+  }
+}

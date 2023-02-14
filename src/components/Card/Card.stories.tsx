@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Card, CardBody, CardHeader } from ".";
+import { Card } from ".";
 
 export default {
   title: "components/Card",
@@ -10,8 +10,8 @@ export default {
 
 const Template: ComponentStory<typeof Card> = (args) => (
   <Card {...args}>
-    <CardHeader>Card header</CardHeader>
-    <CardBody>Card body</CardBody>
+    <Card.Header>Card header</Card.Header>
+    <Card.Body>Card body</Card.Body>
   </Card>
 );
 

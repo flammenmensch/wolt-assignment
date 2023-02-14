@@ -18,13 +18,15 @@ const DayRecord = ({ isToday, ranges = [], label }: Props) => {
         {isToday && <span className={styles.today}>Today</span>}
       </p>
       {isEmpty ? (
-        <span className={styles.closed}>Closed</span>
+        <p className={styles.closed}>Closed</p>
       ) : (
         <ul className={styles.rangeList}>
           {ranges.map((range, i) => (
             <li key={i}>
-              {formatTime(range.start)}
-              {range.end && <> - {formatTime(range.end)}</>}
+              <time className={styles.time}>
+                {formatTime(range.start)}
+                {range.end && <> – {formatTime(range.end)}</>}
+              </time>
             </li>
           ))}
         </ul>

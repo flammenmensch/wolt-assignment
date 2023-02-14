@@ -26,7 +26,23 @@ const JSON_RESPONSE = {
   thursday: [
     {
       type: "open",
-      value: 36000,
+      value: 1000,
+    },
+    {
+      type: "close",
+      value: 3600,
+    },
+    {
+      type: "open",
+      value: 4800,
+    },
+    {
+      type: "close",
+      value: 14000,
+    },
+    {
+      type: "open",
+      value: 54430,
     },
     {
       type: "close",
