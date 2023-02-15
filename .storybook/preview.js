@@ -13,3 +13,10 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (Story) => {
+    worker.resetHandlers();
+    return <Story />;
+  },
+];

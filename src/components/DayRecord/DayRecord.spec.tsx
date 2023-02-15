@@ -25,8 +25,13 @@ describe("components/DayRecord", () => {
   it("Renders 'Today' label", () => {
     render(<DayRecord {...defaultProps} isToday={true} />);
 
+    const dayLabel = screen.queryByText(/^Monday$/);
     const todayLabel = getTodayLabel();
+    const closedLabel = getClosedLabel();
+
+    expect(dayLabel).toBeInTheDocument();
     expect(todayLabel).toBeInTheDocument();
+    expect(closedLabel).toBeInTheDocument();
   });
 
   it("Renders opening hours", () => {
@@ -37,12 +42,14 @@ describe("components/DayRecord", () => {
       },
     ];
 
-    render(<DayRecord {...defaultProps} ranges={ranges} />);
+    render(<DayRecord {...defaultProps} isToday={true} ranges={ranges} />);
 
-    const hoursLabel = screen.getByText(/^9 AM - 3.30 PM$/);
+    const hoursLabel = screen.getByText(/^9 AM – 3.30 PM$/);
+    const todayLabel = getTodayLabel();
     const closedLabel = getClosedLabel();
 
-    expect(closedLabel).not.toBeInTheDocument();
+    expect(todayLabel).toBeInTheDocument();
     expect(hoursLabel).toBeInTheDocument();
+    expect(closedLabel).not.toBeInTheDocument();
   });
 });
