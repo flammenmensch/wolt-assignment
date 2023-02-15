@@ -75,16 +75,19 @@ export const formatSchedule = (source: Schedule) =>
 export const shiftSchedule = (source: Schedule) =>
   Object.keys(source).reduce((acc, day, index, days) => {
     const currentDay = day as DayOfWeek;
-    const first = source[currentDay].at(0);
+    const previousDay =
+      index > 0
+        ? (days.at(index - 1) as DayOfWeek)
+        : (days.at(-1) as DayOfWeek);
 
-    if (index > 0) {
-      const previousDay = days[index - 1] as DayOfWeek;
-      const last = acc[previousDay].at(-1);
+    const first = acc[currentDay].at(0); // First open|closed record
+    const last = acc[previousDay].at(-1); // Last open|closed record
 
-      if (last?.type === "open" && first?.type === "close") {
-        acc[previousDay] = [...acc[previousDay], first];
-        acc[currentDay].shift();
-      }
+    if (last?.type === "open" && first?.type === "close") {
+      acc[currentDay] = [...acc[currentDay].slice(1)];
+      acc[previousDay] = [...acc[previousDay], first];
+    } else {
+      acc[currentDay] = source[currentDay];
     }
 
     return acc;

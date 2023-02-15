@@ -75,8 +75,8 @@ describe("utils/date.ts", () => {
       ${0}     | ${{ hours: 12, minutes: 0, seconds: 0, isPM: false }}
       ${36000} | ${{ hours: 10, minutes: 0, seconds: 0, isPM: false }}
       ${36030} | ${{ hours: 10, minutes: 0, seconds: 30, isPM: false }}
-      ${64800} | ${{ hours: 6, minutes: 0, seconds: 0, isPM: true }}
       ${43200} | ${{ hours: 12, minutes: 0, seconds: 0, isPM: true }}
+      ${64800} | ${{ hours: 6, minutes: 0, seconds: 0, isPM: true }}
       ${75600} | ${{ hours: 9, minutes: 0, seconds: 0, isPM: true }}
     `("converts seconds to FormattedHours object", ({ input, output }) => {
       expect(utils.convertTime(input)).toEqual(output);
@@ -131,41 +131,66 @@ describe("utils/date.ts", () => {
   describe("shiftSchedule", () => {
     test("shift first closing day to match last opening day", () => {
       const input: Schedule = {
-        monday: [{ type: "open", value: 36000 }],
-        tuesday: [
-          { type: "close", value: 3600 },
-          { type: "open", value: 43200 },
-          { type: "close", value: 45000 },
-          { type: "close", value: 48000 },
-        ],
-        wednesday: [],
-        thursday: [],
-        friday: [{ type: "open", value: 36000 }],
-        saturday: [{ type: "close", value: 3600 }],
-        sunday: [],
-      };
-
-      const output: Schedule = {
         monday: [
-          { type: "open", value: 36000 },
           { type: "close", value: 3600 },
+          { type: "open", value: 32400 },
+          { type: "close", value: 72000 },
         ],
         tuesday: [
-          { type: "open", value: 43200 },
-          { type: "close", value: 45000 },
-          { type: "close", value: 48000 },
+          { type: "open", value: 32400 },
+          { type: "close", value: 72000 },
         ],
         wednesday: [],
-        thursday: [],
-        friday: [
-          { type: "open", value: 36000 },
-          { type: "close", value: 3600 },
+        thursday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 64800 },
+          { type: "open", value: 72000 },
+          { type: "close", value: 86399 },
         ],
-        saturday: [],
-        sunday: [],
+        friday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 72000 },
+        ],
+        saturday: [{ type: "open", value: 32400 }],
+        sunday: [
+          { type: "close", value: 7200 },
+          { type: "open", value: 32400 },
+        ],
       };
 
-      expect(utils.shiftSchedule(input)).toEqual(output);
+      const expected: Schedule = {
+        monday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 72000 },
+        ],
+        tuesday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 72000 },
+        ],
+        wednesday: [],
+        thursday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 64800 },
+          { type: "open", value: 72000 },
+          { type: "close", value: 86399 },
+        ],
+        friday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 72000 },
+        ],
+        saturday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 7200 },
+        ],
+        sunday: [
+          { type: "open", value: 32400 },
+          { type: "close", value: 3600 },
+        ],
+      };
+
+      const actual = utils.shiftSchedule(input);
+
+      expect(expected).toEqual(actual);
     });
   });
 });
