@@ -1,13 +1,6 @@
 import { rest } from "msw";
 import { API_ENDPOINT } from "../constants";
 
-const IS_NODE_PROCESS =
-  Object.prototype.toString.call(
-    typeof process !== "undefined" ? process : 0
-  ) === "[object process]";
-
-const ms = (duration: number) => (IS_NODE_PROCESS ? 0 : duration);
-
 const JSON_RESPONSE = {
   monday: [],
   tuesday: [
@@ -81,6 +74,6 @@ const JSON_RESPONSE = {
 
 export const handlers = [
   rest.get(API_ENDPOINT, (req, res, ctx) =>
-    res(ctx.delay(ms(1500)), ctx.status(200), ctx.json(JSON_RESPONSE))
+    res(ctx.delay(1500), ctx.status(200), ctx.json(JSON_RESPONSE))
   ),
 ];

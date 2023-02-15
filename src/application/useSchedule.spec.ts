@@ -23,7 +23,7 @@ describe("application/useSchedule", () => {
     expect(result.current.error).toBeNull();
     expect(result.current.schedule).toBeNull();
 
-    await waitForNextUpdate();
+    await waitForNextUpdate({ timeout: 2000 });
 
     expect(result.current.isLoading).toBeFalsy();
     expect(result.current.error).toBeNull();
