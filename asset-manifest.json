@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wolt-assignment/static/css/main.d8dceccf.css",
-    "main.js": "/wolt-assignment/static/js/main.ea56b6fc.js",
+    "main.js": "/wolt-assignment/static/js/main.6a707cd0.js",
     "static/js/787.1db1198b.chunk.js": "/wolt-assignment/static/js/787.1db1198b.chunk.js",
     "index.html": "/wolt-assignment/index.html",
     "main.d8dceccf.css.map": "/wolt-assignment/static/css/main.d8dceccf.css.map",
-    "main.ea56b6fc.js.map": "/wolt-assignment/static/js/main.ea56b6fc.js.map",
+    "main.6a707cd0.js.map": "/wolt-assignment/static/js/main.6a707cd0.js.map",
     "787.1db1198b.chunk.js.map": "/wolt-assignment/static/js/787.1db1198b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d8dceccf.css",
-    "static/js/main.ea56b6fc.js"
+    "static/js/main.6a707cd0.js"
   ]
 }
